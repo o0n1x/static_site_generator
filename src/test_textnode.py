@@ -22,7 +22,7 @@ class TestTextNode(unittest.TestCase):
         self.assertNotEqual(node, node2)
     def test_texttype_noteq(self):
         node = TextNode("This is a text nod", TextType.BOLD)
-        node2 = TextNode("This is a text node", TextType.PLAIN)
+        node2 = TextNode("This is a text node", TextType.TEXT)
         self.assertNotEqual(node, node2)
 
 if __name__ == "__main__":
