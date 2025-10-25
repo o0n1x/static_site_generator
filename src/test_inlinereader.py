@@ -1,7 +1,7 @@
 import unittest
 
 from textnode import TextNode, TextType
-from mdreader import *
+from inlinereader import *
 
 
 class TestTextNode(unittest.TestCase):
