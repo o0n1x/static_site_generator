@@ -6,6 +6,36 @@ from md_2_html import *
 
 class TestTextNode(unittest.TestCase):
 
+    def test_extract_header(self):
+        md = "# test"
+        header = extract_title(md)
+        self.assertEqual(header,"test")
+
+    def test_extract_header2(self):
+        md = """
+# test"""
+        header = extract_title(md)
+        self.assertEqual(header,"test")
+
+    def test_extract_header3(self):
+        md = """
+
+        trwdfs
+# test"""
+        header = extract_title(md)
+        self.assertEqual(header,"test")
+
+    def test_extract_header4(self):
+        md = """
+
+        trwdfs
+# test
+ fdsaf"""
+        header = extract_title(md)
+        self.assertEqual(header,"test")
+
+    
+
     def test_paragraphs(self):
         md = """
 This is **bolded** paragraph
