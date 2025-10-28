@@ -1,5 +1,5 @@
 
-DIST_FOLDER = "public"
+DIST_FOLDER = "docs"
 
 SOURCE_FOLDER = "static"
 

@@ -1,13 +1,19 @@
 from textnode import *
 import os
 import shutil
+import sys
 from config import *
 from md_2_html import generate_pages_recursive
 def main():
-    copy_to_public()
+
+    args = sys.argv
+    basepath = args[1] if len(args) > 1 else "/"
 
 
-def copy_to_public():
+    copy_to_public(basepath)
+
+
+def copy_to_public(basepath):
     #delete everything in public
     if os.path.exists(SOURCE_FOLDER):
         shutil.rmtree(DIST_FOLDER)
@@ -15,7 +21,7 @@ def copy_to_public():
         # recursively copy whats in static
         copy_to_public_r("/")
         #generate html files
-        generate_pages_recursive("content/","template.html","public/")
+        generate_pages_recursive("content/","template.html","docs/",basepath=basepath)
     else:
         print("Error: invalid path:" , SOURCE_FOLDER)
 
