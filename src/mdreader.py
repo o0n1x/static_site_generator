@@ -20,7 +20,7 @@ def markdown_to_blocks(markdown):
 
 
 def block_to_block_type(markdown):
-    if re.fullmatch(r"#{1,6}[^#]*",markdown):
+    if re.fullmatch(r"#{1,6} {1}[^#]*",markdown):
         return BlockType.HEADING
     if re.fullmatch(r"```[\s\S]*```",markdown):
         return BlockType.CODE

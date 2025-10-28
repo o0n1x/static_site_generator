@@ -184,15 +184,15 @@ this is not a quote
         block_type = block_to_block_type(md)
         self.assertEqual(block_type,BlockType.PARAGRAPH)
     def test_block_to_block_type_heading(self):
-        md = "#this is a heading"
+        md = "# this is a heading"
         block_type = block_to_block_type(md)
         self.assertEqual(block_type,BlockType.HEADING)
     def test_block_to_block_type_heading2(self):
-        md = "######this is a heading"
+        md = "###### this is a heading"
         block_type = block_to_block_type(md)
         self.assertEqual(block_type,BlockType.HEADING)
     def test_block_to_block_type_not_heading(self):
-        md = "#######this is a heading"
+        md = "####### this is a heading"
         block_type = block_to_block_type(md)
         self.assertEqual(block_type,BlockType.PARAGRAPH)
     def test_block_to_block_type_code(self):
